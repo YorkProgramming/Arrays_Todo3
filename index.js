@@ -46,3 +46,32 @@ function secondToLast(arr){
 console.log(secondToLast([42,true,4,"Liam",7]));
 
 //#############################################################################
+
+//3.
+// Second-Largest
+
+/* Return the second-largest element of an array. Given [42,1,4,Math.PI,7],
+    return 7. If the array is too short, return null. */
+
+function secondLargest(arr){
+    if (arr.length < 2){
+        return null;
+    }
+    else{
+        var max = arr[0];
+        var secondMax = arr[0];
+        for (var i = 0; i < arr.length; i++){
+            if (arr[i] > max){
+                max = arr[i];
+            }
+            if (arr[i] > secondMax && arr[i] < max){
+                secondMax = arr[i];
+            }
+        }
+        return secondMax;
+    }
+}
+
+console.log(secondLargest([42,1,4,Math.PI,7]));
+
+//#############################################################################
