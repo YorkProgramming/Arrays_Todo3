@@ -94,3 +94,35 @@ function nthToLast(arr, n){
 console.log(nthToLast([5,2,3,6,4,9,7],3));
 
 //#############################################################################
+
+//5.
+// Nth-Largest
+
+/* Liam has "N" number of Green Belt stickers for excellent Python projects.
+    Given arr and N, return the Nth-largest element, where (N-1) elements are
+    larger. Return null if needed. */
+
+function nthLargest(arr, n){
+    if (arr.length < n){
+        return null;
+    }
+    else{
+        for (var i = 0; i < arr.length; i++){
+            var max = arr[i];
+            var maxIndex = i;
+            for (var j = i; j < arr.length; j++){
+                if (arr[j] > max){
+                    max = arr[j];
+                    maxIndex = j;
+                }
+            }
+            arr[maxIndex] = arr[i];
+            arr[i] = max;
+        }
+        return arr[n - 1];
+    }
+}
+
+console.log(nthLargest([5,2,3,6,4,9,7],3));
+
+//#############################################################################
