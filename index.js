@@ -137,3 +137,17 @@ console.log(nthLargest([5,2,3,6,4,9,7],3));
     stories high, third is 3 stories high (hidden behind the 7-story). You are
     situated at street level. Return array containing heights of buildings you
     can see, in order. Given [-1,1,1,7,3] return [1,7]. */
+
+function skylineHeights(arr){
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++){
+        if (arr[i] > 0){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+console.log(skylineHeights([-1,1,1,7,3]));
+
+//#############################################################################
